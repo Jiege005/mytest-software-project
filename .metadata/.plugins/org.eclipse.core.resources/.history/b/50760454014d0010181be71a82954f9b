@@ -1,0 +1,31 @@
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import edu.ft.dao.IUserDao;
+import edu.ft.model.Users;
+import edu.ft.util.JDBCUtil;
+
+public class IUserDaoImpl implements IUserDao{
+
+	@Override
+	public int register(Users user) {
+		Connection conn = JDBCUtil.getConn();
+		PreparedStatement pstmt = null;
+		String sql = "insert into users(username,password,sex,sid) values(?,?,?,?)";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, user.getUsername());
+			pstmt.setString(2, user.getPassword());
+			pstmt.setInt(3, user.getSex());
+			pstmt.setInt(4, user.getSid());
+			int i = pstmt.executeUpdate();
+			return i;
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return 0;
+	}
+
+}

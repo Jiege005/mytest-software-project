@@ -1,0 +1,15 @@
+package mytest.dao;
+
+import mytest.model.Users;
+
+public interface IUserDao {
+	
+	/**
+	 * 用户注册
+	 * @param user
+	 * @return int >0:success
+	 */
+	public int register(Users user);
+	
+	
+}

@@ -1,0 +1,13 @@
+
+
+
+public interface IUserService {
+	
+	/**
+	 * 用户注册
+	 * @param user
+	 * @return true:success  false:failure
+	 */
+	public boolean register(Users user);
+
+}

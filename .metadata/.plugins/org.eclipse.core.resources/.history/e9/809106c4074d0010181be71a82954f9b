@@ -1,0 +1,79 @@
+package mytest.model;
+
+
+public class Users {
+	/*
+	 * 标准的javabean: ① 私有属性以及对应的get/set方法 ② 公开无参和全参的构造方法
+	 */
+	private int uid;
+	private String username;
+	private String email;
+	private String password;
+	
+	
+	public Users() {
+	}
+	
+	public Users(int uid,String name,String username,String password,int sex,int aid) {
+		this.uid = uid;
+		this.name = name;
+		this.username = username;
+		this.password = password;
+		this.sex = sex;
+		this.aid = aid;
+	}
+	
+	public Users(int uid,String username,String password,int sex,int sid) {
+		this.uid = uid;
+		this.username = username;
+		this.password = password;
+		this.sex = sex;
+		this.sid = sid;
+	}
+	
+	public int getUid() {
+		return uid;
+	}
+	public void setUid(int uid) {
+		this.uid = uid;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public String getUsername() {
+		return username;
+	}
+	public void setUsername(String username) {
+		this.username = username;
+	}
+	public String getPassword() {
+		return password;
+	}
+	public void setPassword(String password) {
+		this.password = password;
+	}
+	public int getSex() {
+		return sex;
+	}
+	public void setSex(int sex) {
+		this.sex = sex;
+	}
+	public int getAid() {
+		return aid;
+	}
+	public void setAid(int aid) {
+		this.aid = aid;
+	}
+
+	public int getSid() {
+		return sid;
+	}
+
+	public void setSid(int sid) {
+		this.sid = sid;
+	}
+	
+}

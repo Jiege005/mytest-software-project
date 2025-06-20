@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="mytest.survices.IUserService"/>
+<fullyQualifiedTypeName name="mytest.survices.IUserServiceImpl"/>
+<fullyQualifiedTypeName name="mytest.util.JDBCUtil"/>
+<fullyQualifiedTypeName name="mytest.dao.IUserDao"/>
+<fullyQualifiedTypeName name="mytest.dao.IUserDaoImpl"/>
+<fullyQualifiedTypeName name="mytest.model.Users"/>
+</qualifiedTypeNameHistroy>

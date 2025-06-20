@@ -1,0 +1,7 @@
+INDEX VERSION 1.131
+C:\Users\Lenovo\eclipse-workspace19\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\916909312.index
+\mytest\src
+C:\Users\Lenovo\eclipse-workspace19\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\702824474.index
+\mytest\src
+C:\Users\Lenovo\eclipse-workspace19\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3361568214.index
+\mytest\src

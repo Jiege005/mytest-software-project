@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<title>我的网页</title>
+	    <!-- 标签选择器 -->
+		<style type="text/css">
+			#p1{
+				color: green;
+			}
+			p{
+				color: red;
+			}
+			.c{
+				color: blue;
+				border: 1px solid #123;
+			}
+		</style>
+		
+		 
+		 <!-- 引入外部css文件 -->
+		 <link rel="stylesheet" type="text/css" href="css/index.css">
+	</head>
+	<body>
+		<!-- 文本标签 -->
+		<h3>文本标签</h3>
+		这是我的网页<br>这也是我的网页 <br>
+		<p id="p1">这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落</p>
+		<p id="p1">这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落</p>
+		<p class="c" style="color: red;">这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落这是一个段落</p>
+		<hr>
+		<h1 class="c">这是标题</h1>
+		<h2>这是标题</h2>
+		<h3>这是标题</h3>
+		<h4>这是标题</h4>
+		<h5>这是标题</h5> 
+		<h6>这是标题</h6>
+		<a href="https://www.douban.com/" target="_blank">豆瓣</a>
+		<a href="https://movie.douban.com/subject/36247731/?from=showing" target="_blank">
+			<img alt="电影" title="驯龙高手" src="images/img1.png" width="150" height="200">
+		</a>
+		
+		<hr>
+		<h3>表格标签</h3>
+		<table border="1">
+			<tr>
+				<td>11</td>
+				<td colspan="2">12</td>
+				<td>13</td>
+				<td>13</td>
+			</tr>
+			<tr>
+				<td>11</td>
+				<td>12</td>
+				<td>13</td>
+				<td rowspan="2">13</td>
+				<td>13</td>
+			</tr>
+			<tr>
+				<td>11</td>
+				<td>12</td>
+				<td>13</td>
+				<td>13</td>
+			</tr>
+		</table>
+			
+		<table class="table table-hover">
+  			<!-- On rows -->
+			<tr class="active">
+				<td>11</td>
+				<td>12</td>
+				<td>13</td>
+			</tr>
+			<tr class="success">
+				<td>11</td>
+				<td>12</td>
+				<td>13</td>
+			</tr>
+		
+
+			
+		</table>
+		
+		<h3>表单标签</h3>
+		<form action="other.html"> 
+			姓名：<input type="text" name="name"><br>
+			密码：<input type="password" name="password"><br>
+			期望薪资：<select>
+						<option>3000</option>
+						<option>3000-6000</option>
+						<option>6000-10000</option>
+						<option>10000-20000</option>
+						<option>越多越好</option>
+			         </select><br>
+                        性别：<input type="radio" name="sex" id="boy"><label for="boy">男</label>	
+                 <input type="radio" name="sex" id="girl"><label for="girl">女</label><br>   		         
+			爱好： <input type="checkbox" name="hobby">看书
+			      <input type="checkbox" name="hobby">敲代码
+			      <input type="checkbox" name="hobby">运动<br>
+			<input type="submit" value="提交">  
+		</form>
+		
+	</body>
+</html>

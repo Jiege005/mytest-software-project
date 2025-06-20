@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>职工管理系统 - 登录</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* 保留原有的所有样式变量和基础样式 */
+        :root {
+            --primary: #1a73e8;
+            --primary-dark: #0d47a1;
+            --secondary: #f5f8fa;
+            --accent: #34a853;
+            --warning: #fbbc05;
+            --danger: #ea4335;
+            --text: #202124;
+            --text-light: #5f6368;
+            --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: var(--text);
+            line-height: 1.6;
+        }
+        
+        /* 新增登录页面专用样式 */
+        .login-container {
+            max-width: 500px;
+            margin: 5rem auto;
+            padding: 0 2rem;
+        }
+        
+        .login-card {
+            background: white;
+            border-radius: 12px;
+            padding: 2.5rem;
+            box-shadow: var(--card-shadow);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .login-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+        }
+        
+        .login-header {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .login-header i {
+            font-size: 2.5rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .login-header h2 {
+            font-size: 1.75rem;
+            color: var(--primary-dark);
+        }
+        
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            font-weight: 500;
+        }
+        
+        .form-group input {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus {
+            border-color: var(--primary);
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(26, 115, 232, 0.1);
+        }
+        
+        .remember-forgot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+        }
+        
+        .remember-me {
+            display: flex;
+            align-items: center;
+        }
+        
+        .remember-me input {
+            margin-right: 0.5rem;
+        }
+        
+        .forgot-password a {
+            color: var(--primary);
+            text-decoration: none;
+        }
+        
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+        
+        .btn {
+            display: inline-block;
+            width: 100%;
+            padding: 0.75rem;
+            background: var(--primary);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            text-align: center;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+        }
+        
+        .register-link {
+            text-align: center;
+            margin-top: 1.5rem;
+            color: var(--text-light);
+        }
+        
+        .register-link a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+        }
+        
+        .register-link a:hover {
+            text-decoration: underline;
+        }
+        
+        /* 验证码样式 */
+        .captcha-group {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .captcha-group input {
+            flex: 1;
+        }
+        
+        .captcha-img {
+            height: 40px;
+            border-radius: 4px;
+            cursor: pointer;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+    <!-- 保留原有的header部分 -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <i class="fas fa-users logo-icon"></i>
+                <h1>职工管理系统</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="register.html"><i class="fas fa-user-plus"></i> 注册</a>
+                <a href="login.html" class="active"><i class="fas fa-sign-in-alt"></i> 登录</a>
+                <a href="#"><i class="fas fa-building"></i> 我的部门</a>
+            </nav>
+        </div>
+    </header>
+    
+    <main class="login-container">
+        <div class="login-card">
+            <div class="login-header">
+                <i class="fas fa-sign-in-alt"></i>
+                <h2>用户登录</h2>
+            </div>
+            
+            <form action="/login" method="POST">
+                <div class="form-group">
+                    <label for="username">用户名</label>
+                    <input type="text" id="username" name="username" placeholder="请输入用户名" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">密码</label>
+                    <input type="password" id="password" name="password" placeholder="请输入密码" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="captcha">验证码</label>
+                    <div class="captcha-group">
+                        <input type="text" id="captcha" name="captcha" placeholder="请输入验证码" required>
+                        <img src="/captcha" alt="验证码" class="captcha-img" id="captcha-image" onclick="refreshCaptcha()">
+                    </div>
+                </div>
+                
+                <div class="remember-forgot">
+                    <div class="remember-me">
+                        <input type="checkbox" id="remember" name="remember">
+                        <label for="remember">记住我</label>
+                    </div>
+                    <div class="forgot-password">
+                        <a href="forgot-password.html">忘记密码？</a>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn">登录</button>
+            </form>
+            
+            <div class="register-link">
+                还没有账号？<a href="register.html">立即注册</a>
+            </div>
+        </div>
+    </main>
+    
+    <!-- 保留原有的footer部分 -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">
+                <i class="fas fa-users"></i> 职工管理系统
+            </div>
+            <p>高效管理企业人力资源，提升组织管理效率</p>
+            <div class="copyright">
+                &copy; 2023 职工管理系统 版权所有 | 设计开发: 企业IT部门
+            </div>
+        </div>
+    </footer>
+    
+    <script>
+        function refreshCaptcha() {
+            document.getElementById('captcha-image').src = '/captcha?t=' + new Date().getTime();
+        }
+        
+        // 添加简单的动画效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const loginCard = document.querySelector('.login-card');
+            loginCard.style.opacity = '0';
+            loginCard.style.transform = 'translateY(20px)';
+            loginCard.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+            
+            setTimeout(() => {
+                loginCard.style.opacity = '1';
+                loginCard.style.transform = 'translateY(0)';
+            }, 300);
+        });
+    </script>
+</body>
+</html>

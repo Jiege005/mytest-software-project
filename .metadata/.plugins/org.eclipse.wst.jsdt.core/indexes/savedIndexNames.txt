@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\Lenovo\eclipse-workspace19\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+149391779.index
+702824474.index
+427703500.index
+3230294935.index
+51506206.index
+857995946.index
+3817252662.index
