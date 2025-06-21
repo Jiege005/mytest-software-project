@@ -2,6 +2,7 @@ package mytest.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import mytest.model.User;
@@ -26,6 +27,27 @@ public class IUserDaoImpl implements IUserDao{
 			e.printStackTrace();
 		}
 		return 0;
+	}
+
+	@Override
+	public int login(String username, String password) {
+		Connection conn = JDBCUtil.getConn();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		int uid = 0;
+		String sql = "select uid from users where username=? and password=?";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, username);
+			pstmt.setString(2, password);
+			rs = pstmt.executeQuery();
+			while(rs.next()) {
+				uid = rs.getInt("uid");
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return uid;
 	}
 
 }

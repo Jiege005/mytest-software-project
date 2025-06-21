@@ -11,5 +11,11 @@ public interface IUserDao {
 	 */
 	public int register(User user);
 	
-	
+	/**
+	 * 用户登录
+	 * @param username
+	 * @param password
+	 * @return int:uid
+	 */
+	public int login(String username,String password);
 }

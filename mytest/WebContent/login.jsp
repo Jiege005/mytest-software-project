@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -248,7 +249,7 @@
                         <a href="forgot-password.html" style="color: var(--primary); text-decoration: none;">忘记密码?</a>
                     </div>
                     
-                    <button type="submit" class="btn">登录</button>
+                    <button type="submit" class="btn btn-default">登录</button>
                 </form>
                 
                 <div class="auth-footer">
@@ -258,9 +259,6 @@
         </div>
     </main>
     
-    <!-- Footer -->
-    <footer>
-        &copy; 2023 职工管理系统 版权所有 | 设计开发: 企业IT部门
-    </footer>
+    <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

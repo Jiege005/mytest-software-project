@@ -1,6 +1,5 @@
 package mytest.model;
 
-
 public class User {
 	/*
 	 * 标准的javabean: ① 私有属性以及对应的get/set方法 ② 公开无参和全参的构造方法

@@ -1,6 +1,5 @@
 package mytest.util;
 
-
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -16,7 +15,6 @@ public class JDBCUtil {
 	
 	static {
 		try {
-			// 只需要加载一次即可
 			Class.forName("com.mysql.cj.jdbc.Driver");
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();

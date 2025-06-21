@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -430,9 +431,7 @@
                 <i class="fas fa-users"></i> 职工管理系统
             </div>
             <p>高效管理企业人力资源，提升组织管理效率</p>
-            <div class="copyright">
-                &copy; 2023 职工管理系统 版权所有 | 设计开发: 企业IT部门
-            </div>
+            <jsp:include page="footer.jsp"></jsp:include>
         </div>
     </footer>
     

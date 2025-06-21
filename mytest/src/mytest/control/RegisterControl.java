@@ -9,9 +9,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import mytest.model.User;
-import mytest.survices.IUserService;
-import mytest.survices.IUserServiceImpl;
-
+import mytest.services.IUserService;
+import mytest.services.IUserServiceImpl;
+import mytest.util.MD5;
 
 // 标识当前servlet控制器的请求名称
 @WebServlet("/register")
@@ -27,7 +27,6 @@ public class RegisterControl extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		doPost(req,resp);
-		//req.getRequestDispatcher("register.jsp").forward(req, resp);
 	}
 	
 	@Override
@@ -50,6 +49,9 @@ public class RegisterControl extends HttpServlet{
 		String password = request.getParameter("password");
 		System.out.println(username+","+email+","+password);
 		
+		// 对密码进行加密
+		password = MD5.computeDigest(password.getBytes());
+		
 		User user = new User(0,username,email,password);
 		
 		boolean result = iuserService.register(user);
@@ -65,13 +67,6 @@ public class RegisterControl extends HttpServlet{
 			request.setAttribute("info", "注册失败，用户名或邮箱已存在");
 			request.getRequestDispatcher("register.jsp").forward(request, response);
 		}
-		/*
-		if(result) {
-			response.sendRedirect("login.jsp?register=success");
-		}else {
-			request.setAttribute("error", "注册失败，用户名或邮箱已存在");
-			request.getRequestDispatcher("register.jsp").forward(request, response);
-		}*/
 	}
 
 }

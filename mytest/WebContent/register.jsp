@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -290,10 +291,7 @@
         </div>
     </main>
     
-    <!-- Footer -->
-    <footer>
-        &copy; 2023 职工管理系统 版权所有 | 设计开发: 企业IT部门
-    </footer>
+    <jsp:include page="footer.jsp"></jsp:include>
     
     <script>
         
