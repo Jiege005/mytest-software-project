@@ -32,6 +32,7 @@ public class LoginControl extends HttpServlet{
 		  */
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
+		System.out.println(username+","+password);
 		boolean result = iuserService.login(username, MD5.computeDigest(password.getBytes()));
 		if(result) {
 			// 把用户名存入session对象中

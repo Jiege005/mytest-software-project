@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -94,6 +94,46 @@
         .nav-links a i {
             font-size: 1.1rem;
         }
+        
+        li{
+        	list-style-type: none;
+        }
+		
+		/* 主菜单项样式 */
+		.myself > ul > li {
+		  position: relative;
+		  border-bottom: 1px solid #ddd;
+		}
+		
+		.myself > ul > li > a {
+		  display: block;
+		  padding: 12px 20px;
+		  text-decoration: none;
+		}
+		
+		/* 下拉菜单样式 */
+		.dropdown-menu {
+		  display: none;
+		  position: absolute;
+		  background: #fff;
+		  border-left: 3px solid #4CAF50;
+		}
+		
+		.dropdown:hover .dropdown-menu {
+		  display: block;
+		}
+		
+		/* 下拉菜单项样式 */
+		.dropdown-menu li a {
+		  display: block;
+		  padding: 10px 30px;
+		  color: #555;
+		  text-decoration: none;
+		}
+		
+		.dropdown-menu li a:hover {
+		  background: #f1f1f1;
+		}
         
         /* Main Content */
         main {
@@ -335,11 +375,26 @@
                 <i class="fas fa-users logo-icon"></i>
                 <h1>职工管理系统</h1>
             </div>
-            <nav class="nav-links">
-                <a href="#"><i class="fas fa-user-plus"></i> 注册</a>
-                <a href="#"><i class="fas fa-sign-in-alt"></i> 登录</a>
-                <a href="#"><i class="fas fa-building"></i> 我的部门</a>
-            </nav>
+            <ul class="nav-links" >
+		        <c:if test="${username == null }">
+			        <li><a href="login.jsp"><i class="fas fa-sign-in-alt"></i> 登录</a></li>
+			        <li><a href="register.jsp"><i class="fas fa-user-plus"></i> 注册</a></li>
+		        </c:if>
+		        <c:if test="${username != null}">
+		        	<li><a href="#">${username }</a></li>
+			        <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">我的 ▼<span class="caret"></span></a>
+			          <nav class="myself">
+				          <ul class="dropdown-menu">
+				            <li><a href="#">我的信息</a></li>
+				            <li><a href="#">我的部门</a></li>
+				            <li role="separator" class="divider"></li>
+				            <li><a href="loginout">退出</a></li>
+				          </ul>
+			          </nav>
+			        </li>
+		        </c:if>
+		      </ul>
         </div>
     </header>
     

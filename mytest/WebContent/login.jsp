@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -231,7 +231,7 @@
             </div>
             
             <div class="auth-body">
-                <form action="/login" method="POST">
+                <form action="login" method="post">
                     <div class="form-group">
                         <label for="username">用户名</label>
                         <input type="text" id="username" name="username" class="form-control" placeholder="请输入用户名" required>
@@ -249,7 +249,7 @@
                         <a href="forgot-password.html" style="color: var(--primary); text-decoration: none;">忘记密码?</a>
                     </div>
                     
-                    <button type="submit" class="btn btn-default">登录</button>
+                    <button type="submit" class="btn">登录</button>
                 </form>
                 
                 <div class="auth-footer">

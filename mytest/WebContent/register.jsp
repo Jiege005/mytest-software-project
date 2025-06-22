@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html lang="zh-CN">
 <head>
@@ -281,7 +281,7 @@
                         <label for="agree-terms">我已阅读并同意<a href="#">用户协议</a>和<a href="#">隐私政策</a></label>
                     </div>
                     
-                    <button type="submit" class="btn btn-default">注册</button>
+                    <button type="submit" class="btn">注册</button>
                 </form>
                 
                 <div class="auth-footer">

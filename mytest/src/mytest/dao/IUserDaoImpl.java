@@ -35,7 +35,7 @@ public class IUserDaoImpl implements IUserDao{
 		PreparedStatement pstmt = null;
 		ResultSet rs = null;
 		int uid = 0;
-		String sql = "select uid from users where username=? and password=?";
+		String sql = "select uid from user where username=? and password=?";
 		try {
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setString(1, username);
