@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>职工管理系统</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
+	<link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
+	<script type="text/javascript" src="bootstrap-3.3.5-dist/js/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <style type="text/css">
         * {
             margin: 0;
             padding: 0;
@@ -91,6 +94,40 @@
         .nav-links a i {
             font-size: 1.1rem;
         }
+        
+        li{
+        	list-style-type: none;
+        }
+		
+		/*下拉菜单样式 */
+		.nav-links .dropdown-menu {
+		  display: none;
+		  position: absolute;
+		  background: white;
+		  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+		  border: none;
+		  border-radius: 4px;
+		  margin-top: 5px;
+		}
+		
+		.nav-links .dropdown-menu a {
+		  color: #333 !important;
+		  padding: 10px 20px;
+		}
+		
+		.nav-links .dropdown.open .dropdown-menu {
+		  display: block;
+		}
+		
+		.nav-links .dropdown-menu li:hover {
+		  background: #f5f5f5;
+		}
+		
+		.divider {
+		  height: 1px;
+		  background: #eee;
+		  margin: 5px 0;
+		}
         
         /* Main Content */
         main {
@@ -332,11 +369,26 @@
                 <i class="fas fa-users logo-icon"></i>
                 <h1>职工管理系统</h1>
             </div>
-            <nav class="nav-links">
-                <a href="#"><i class="fas fa-user-plus"></i> 注册</a>
-                <a href="#"><i class="fas fa-sign-in-alt"></i> 登录</a>
-                <a href="#"><i class="fas fa-building"></i> 我的部门</a>
-            </nav>
+            <ul class="nav-links" >
+		        <c:if test="${username == null }">
+			        <li><a href="login.jsp"><i class="fas fa-sign-in-alt"></i> 登录</a></li>
+			        <li><a href="register.jsp"><i class="fas fa-user-plus"></i> 注册</a></li>
+		        </c:if>
+		        <c:if test="${username != null}">
+		        	<li><a href="#">${username }</a></li>
+			        <li class="dropdown">
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    我的 <span class="caret"></span>
+					  </a>
+					  <ul class="dropdown-menu">
+					    <li><a href="#">我的信息</a></li>
+					    <li><a href="#">我的部门</a></li>
+					    <li class="divider" role="separator"></li>
+					    <li><a href="loginout">退出</a></li>
+					  </ul>
+					</li>
+		        </c:if>
+		      </ul>
         </div>
     </header>
     
@@ -427,10 +479,10 @@
             <div class="footer-logo">
                 <i class="fas fa-users"></i> 职工管理系统
             </div>
-            <p>高效管理企业人力资源，提升组织管理效率</p>
-            <div class="copyright">
-                &copy; 2023 职工管理系统 版权所有 | 设计开发: 企业IT部门
-            </div>
+            <p><big>高效管理企业人力资源，提升组织管理效率</big></p>
+            <div class="container-fluid text-center">
+			  	<p>&copy; 2025 职工管理系统 版权所有 | 设计开发: 企业IT部门</p>
+			</div>
         </div>
     </footer>
     

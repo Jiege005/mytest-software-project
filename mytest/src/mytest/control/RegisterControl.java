@@ -63,7 +63,7 @@ public class RegisterControl extends HttpServlet{
 		 */
 		if(result) {
 			request.setAttribute("info", "注册成功");
-			response.sendRedirect("Main.jsp");
+			response.sendRedirect("login.jsp");
 		}else {
 			request.setAttribute("info", "注册失败，用户名或邮箱已存在");
 			request.getRequestDispatcher("register.jsp").forward(request, response);

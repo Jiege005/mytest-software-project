@@ -7,9 +7,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>职工管理系统 - 注册</title>
-    
+    <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
+    <script type="text/javascript" src="bootstrap-3.3.5-dist/js/jquery-1.11.3.js"></script>
+    <script type="text/javascript" src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <style type="text/css">
         * {
             margin: 0;
             padding: 0;
@@ -166,6 +168,7 @@
         .terms label {
             color: var(--text-light);
             font-size: 0.9rem;
+            margin-bottom: 0;
         }
         
         .terms a {
@@ -178,7 +181,7 @@
         }
         
         .btn {
-            display: inline-block;
+            display: block;
             width: 100%;
             padding: 0.75rem;
             background: var(--primary);
@@ -218,9 +221,30 @@
         footer {
             background: var(--primary-dark);
             color: rgba(255, 255, 255, 0.8);
-            padding: 1.5rem 0;
+            padding: 2.5rem 0;
+            margin-top: 3rem;
+        }
+        
+        .footer-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             text-align: center;
+        }
+        
+        .footer-logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            color: white;
+        }
+        
+        .copyright {
             font-size: 0.9rem;
+            margin-top: 1.5rem;
         }
         
         /* Responsive Design */
@@ -292,10 +316,14 @@
         </div>
     </main>
     
-    <jsp:include page="footer.jsp"></jsp:include>
+    <!-- Footer -->
+    <footer>
+    	<div class="container-fluid text-center">
+		  	<p>&copy; 2025 职工管理系统 版权所有 | 设计开发: 企业IT部门</p>
+		</div>
+    </footer>
     
     <script>
-        
         // 表单提交验证
         document.getElementById('registerForm').addEventListener('submit', function(event) {
             const password = document.getElementById('password').value;
@@ -311,7 +339,6 @@
                 event.preventDefault();
             }
         });
-        
     </script>
 </body>
 </html>

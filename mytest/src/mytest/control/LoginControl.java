@@ -35,9 +35,13 @@ public class LoginControl extends HttpServlet{
 		System.out.println(username+","+password);
 		boolean result = iuserService.login(username, MD5.computeDigest(password.getBytes()));
 		if(result) {
-			// 把用户名存入session对象中
-			request.getSession().setAttribute("username", username);
-			response.sendRedirect("Main.jsp");
+			if(username.equals("admin")) {
+				response.sendRedirect("administration.jsp");
+			}else {
+				// 把用户名存入session对象中
+				request.getSession().setAttribute("username", username);
+				response.sendRedirect("Main.jsp");
+			}
 		}else {
 			request.setAttribute("info", "用户名或密码错误!");
 			request.getRequestDispatcher("login.jsp").forward(request, response);

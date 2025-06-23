@@ -28,21 +28,4 @@
 		<nature>org.eclipse.jdt.core.javanature</nature>
 		<nature>org.eclipse.wst.jsdt.core.jsNature</nature>
 	</natures>
-	<linkedResources>
-		<link>
-			<name>WebContent/contest/css</name>
-			<type>2</type>
-			<locationURI>virtual:/virtual</locationURI>
-		</link>
-		<link>
-			<name>WebContent/contest/images</name>
-			<type>2</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Desktop/0620-%E4%B8%8B%E5%8D%88%E5%AE%9E%E8%AE%AD%E8%B5%84%E6%96%99/mytest/WebContent/images</locationURI>
-		</link>
-		<link>
-			<name>WebContent/contest/css/index.css</name>
-			<type>1</type>
-			<locationURI>PARENT-2-PROJECT_LOC/Desktop/0620-%E4%B8%8B%E5%8D%88%E5%AE%9E%E8%AE%AD%E8%B5%84%E6%96%99/mytest/WebContent/css/index.css</locationURI>
-		</link>
-	</linkedResources>
 </projectDescription>

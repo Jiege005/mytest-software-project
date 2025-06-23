@@ -7,8 +7,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>职工管理系统</title>
-    <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+	<link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
 	<script type="text/javascript" src="bootstrap-3.3.5-dist/js/jquery-1.11.3.js"></script>
 	<script type="text/javascript" src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
     <style type="text/css">
@@ -482,8 +482,10 @@
             <div class="footer-logo">
                 <i class="fas fa-users"></i> 职工管理系统
             </div>
-            <p>高效管理企业人力资源，提升组织管理效率</p>
-            <jsp:include page="footer.jsp"></jsp:include>
+            <p><big>高效管理企业人力资源，提升组织管理效率</big></p>
+            <div class="container-fluid text-center">
+			  	<p>&copy; 2025 职工管理系统 版权所有 | 设计开发: 企业IT部门</p>
+			</div>
         </div>
     </footer>
     
