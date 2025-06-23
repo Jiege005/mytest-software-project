@@ -482,7 +482,7 @@
             <div class="footer-logo">
                 <i class="fas fa-users"></i> 职工管理系统
             </div>
-            <p><big>高效管理企业人力资源，提升组织管理效率</big></p>
+            <p>高效管理企业人力资源，提升组织管理效率</p>
             <div class="container-fluid text-center">
 			  	<p>&copy; 2025 职工管理系统 版权所有 | 设计开发: 企业IT部门</p>
 			</div>

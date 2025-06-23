@@ -14,11 +14,11 @@
 	<script type="text/javascript" src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
     <style>
 	 {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
+           margin: 0;
+           padding: 0;
+           box-sizing: border-box;
+           font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+       }
         
         :root {
 	-primary: #1a73e8;
