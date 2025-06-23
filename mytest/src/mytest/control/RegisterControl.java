@@ -44,6 +44,7 @@ public class RegisterControl extends HttpServlet{
 		 *     3.2 false 跳转到注册页面，重新注册
 		 */
 		// ?username=zhangsan&password=111111
+		request.setCharacterEncoding("UTF-8");
 		String username = request.getParameter("username");
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");

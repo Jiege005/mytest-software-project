@@ -13,7 +13,7 @@
             padding: 1.5rem 0;
             text-align: center;
             font-size: 0.9rem;">
-	  	<p>&copy; 2023 职工管理系统 版权所有 | 设计开发: 企业IT部门</p>
+	  	<p>&copy; 2025 职工管理系统 版权所有 | 设计开发: 企业IT部门</p>
 	</div>
 </body>
 </html>

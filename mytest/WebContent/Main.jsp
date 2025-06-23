@@ -7,8 +7,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>职工管理系统</title>
+    <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <style>
+	<script type="text/javascript" src="bootstrap-3.3.5-dist/js/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
+    <style type="text/css">
         * {
             margin: 0;
             padding: 0;
@@ -99,40 +102,34 @@
         	list-style-type: none;
         }
 		
-		/* 主菜单项样式 */
-		.myself > ul > li {
-		  position: relative;
-		  border-bottom: 1px solid #ddd;
-		}
-		
-		.myself > ul > li > a {
-		  display: block;
-		  padding: 12px 20px;
-		  text-decoration: none;
-		}
-		
-		/* 下拉菜单样式 */
-		.dropdown-menu {
+		/*下拉菜单样式 */
+		.nav-links .dropdown-menu {
 		  display: none;
 		  position: absolute;
-		  background: #fff;
-		  border-left: 3px solid #4CAF50;
+		  background: white;
+		  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+		  border: none;
+		  border-radius: 4px;
+		  margin-top: 5px;
 		}
 		
-		.dropdown:hover .dropdown-menu {
+		.nav-links .dropdown-menu a {
+		  color: #333 !important;
+		  padding: 10px 20px;
+		}
+		
+		.nav-links .dropdown.open .dropdown-menu {
 		  display: block;
 		}
 		
-		/* 下拉菜单项样式 */
-		.dropdown-menu li a {
-		  display: block;
-		  padding: 10px 30px;
-		  color: #555;
-		  text-decoration: none;
+		.nav-links .dropdown-menu li:hover {
+		  background: #f5f5f5;
 		}
 		
-		.dropdown-menu li a:hover {
-		  background: #f1f1f1;
+		.divider {
+		  height: 1px;
+		  background: #eee;
+		  margin: 5px 0;
 		}
         
         /* Main Content */
@@ -383,16 +380,16 @@
 		        <c:if test="${username != null}">
 		        	<li><a href="#">${username }</a></li>
 			        <li class="dropdown">
-			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">我的 ▼<span class="caret"></span></a>
-			          <nav class="myself">
-				          <ul class="dropdown-menu">
-				            <li><a href="#">我的信息</a></li>
-				            <li><a href="#">我的部门</a></li>
-				            <li role="separator" class="divider"></li>
-				            <li><a href="loginout">退出</a></li>
-				          </ul>
-			          </nav>
-			        </li>
+					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					    我的 <span class="caret"></span>
+					  </a>
+					  <ul class="dropdown-menu">
+					    <li><a href="#">我的信息</a></li>
+					    <li><a href="#">我的部门</a></li>
+					    <li class="divider" role="separator"></li>
+					    <li><a href="loginout">退出</a></li>
+					  </ul>
+					</li>
 		        </c:if>
 		      </ul>
         </div>
