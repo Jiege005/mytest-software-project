@@ -191,47 +191,7 @@
         .auth-footer a:hover {
             text-decoration: underline;
         }
-        
-        /* Footer */
-        footer {
-            background: var(--primary-dark);
-            color: rgba(255, 255, 255, 0.8);
-            padding: 2.5rem 0;
-            margin-top: 3rem;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: white;
-        }
-        
-        .copyright {
-            font-size: 0.9rem;
-            margin-top: 1.5rem;
-        }
-        
-        /* Responsive Design */
-        @media (max-width: 480px) {
-            .auth-container {
-                max-width: 100%;
-            }
-            
-            .auth-header, .auth-body {
-                padding: 1.5rem;
-            }
-        }
+
     </style>
 </head>
 <body>
@@ -283,12 +243,6 @@
         </div>
     </main>
     
-    <!-- Footer -->
-    <footer>
-    	<div class="container-fluid text-center">
-		  	<p>&copy; 2025 职工管理系统 版权所有 | 设计开发: 企业IT部门</p>
-		</div>
-    </footer>
-    
+    <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

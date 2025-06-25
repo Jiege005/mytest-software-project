@@ -1,5 +1,7 @@
 package mytest.dao;
 
+import java.util.List;
+
 import mytest.model.User;
 
 public interface IUserDao {
@@ -18,4 +20,10 @@ public interface IUserDao {
 	 * @return int:uid
 	 */
 	public int login(String username,String password);
+	
+	/**
+	 * 用户列表
+	 * @return List<Users> 
+	 */
+	public List<User> getUserList();
 }

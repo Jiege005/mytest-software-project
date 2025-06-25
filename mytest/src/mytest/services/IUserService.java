@@ -1,5 +1,7 @@
 package mytest.services;
 
+import java.util.List;
+
 import mytest.model.User;
 
 public interface IUserService {
@@ -17,5 +19,11 @@ public interface IUserService {
 	 * @param password
 	 * @return true:success
 	 */
-	public boolean login(String username,String password);
+	public int login(String username,String password);
+	
+	/**
+	 * 用户列表
+	 * @return List<Users> 
+	 */
+	public List<User> getUserList();
 }

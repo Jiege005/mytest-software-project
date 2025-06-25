@@ -36,102 +36,7 @@
             color: var(--text);
             line-height: 1.6;
         }
-        
-        /* Header Styles */
-        header {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-            padding: 1rem 0;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-        
-        .header-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-        
-        .logo-icon {
-            font-size: 2rem;
-            color: #fff;
-        }
-        
-        .logo h1 {
-            font-size: 1.5rem;
-            font-weight: 600;
-        }
-        
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-        }
-        
-        .nav-links a {
-            color: rgba(255, 255, 255, 0.9);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 0.75rem;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .nav-links a:hover {
-            background: rgba(255, 255, 255, 0.15);
-        }
-        
-        .nav-links a i {
-            font-size: 1.1rem;
-        }
-        
-        li{
-        	list-style-type: none;
-        }
-		
-		/*下拉菜单样式 */
-		.nav-links .dropdown-menu {
-		  display: none;
-		  position: absolute;
-		  background: white;
-		  box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-		  border: none;
-		  border-radius: 4px;
-		  margin-top: 5px;
-		}
-		
-		.nav-links .dropdown-menu a {
-		  color: #333 !important;
-		  padding: 10px 20px;
-		}
-		
-		.nav-links .dropdown.open .dropdown-menu {
-		  display: block;
-		}
-		
-		.nav-links .dropdown-menu li:hover {
-		  background: #f5f5f5;
-		}
-		
-		.divider {
-		  height: 1px;
-		  background: #eee;
-		  margin: 5px 0;
-		}
-        
+
         /* Main Content */
         main {
             max-width: 1200px;
@@ -305,38 +210,8 @@
             background: var(--primary);
             color: white;
         }
-        
-        /* Footer */
-        footer {
-            background: var(--primary-dark);
-            color: rgba(255, 255, 255, 0.8);
-            padding: 2.5rem 0;
-            margin-top: 3rem;
-        }
-        
-        .footer-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 2rem;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-        }
-        
-        .footer-logo {
-            font-size: 1.5rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            color: white;
-        }
-        
-        .copyright {
-            font-size: 0.9rem;
-            margin-top: 1.5rem;
-        }
-        
-        /* Responsive Design */
+
+		/* Responsive Design */
         @media (max-width: 768px) {
             .header-container {
                 flex-direction: column;
@@ -365,36 +240,8 @@
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header>
-        <div class="header-container">
-            <div class="logo">
-                <i class="fas fa-users logo-icon"></i>
-                <h1>职工管理系统</h1>
-            </div>
-            <ul class="nav-links" >
-		        <c:if test="${username == null }">
-			        <li><a href="login.jsp"><i class="fas fa-sign-in-alt"></i> 登录</a></li>
-			        <li><a href="register.jsp"><i class="fas fa-user-plus"></i> 注册</a></li>
-		        </c:if>
-		        <c:if test="${username != null}">
-		        	<li><a href="#">${username }</a></li>
-			        <li class="dropdown">
-					  <a href="#" class="dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-					    我的 <span class="caret"></span>
-					  </a>
-					  <ul class="dropdown-menu">
-					    <li><a href="#">我的信息</a></li>
-					    <li><a href="#">我的部门</a></li>
-					    <li class="divider" role="separator"></li>
-					    <li><a href="loginout">退出</a></li>
-					  </ul>
-					</li>
-		        </c:if>
-		      </ul>
-        </div>
-    </header>
-    
+	<jsp:include page="header.jsp"></jsp:include>
+	
     <!-- Main Content -->
     <main>
         <section class="welcome-section">
@@ -476,53 +323,6 @@
         </section>
     </main>
     
-    <!-- Footer -->
-    <footer>
-        <div class="footer-container">
-            <div class="footer-logo">
-                <i class="fas fa-users"></i> 职工管理系统
-            </div>
-            <p>高效管理企业人力资源，提升组织管理效率</p>
-            <div class="container-fluid text-center">
-			  	<p>&copy; 2025 职工管理系统 版权所有 | 设计开发: 企业IT部门</p>
-			</div>
-        </div>
-    </footer>
-    
-    <script>
-        // 添加简单的动画效果
-        document.addEventListener('DOMContentLoaded', function() {
-            // 卡片进入动画
-            const cards = document.querySelectorAll('.feature-card');
-            cards.forEach((card, index) => {
-                card.style.opacity = '0';
-                card.style.transform = 'translateY(20px)';
-                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                
-                setTimeout(() => {
-                    card.style.opacity = '1';
-                    card.style.transform = 'translateY(0)';
-                }, 300 + index * 150);
-            });
-            
-            // 统计数字动画
-            const stats = document.querySelectorAll('.stat-value');
-            stats.forEach(stat => {
-                const target = parseInt(stat.textContent);
-                let current = 0;
-                const increment = Math.ceil(target / 50);
-                
-                const timer = setInterval(() => {
-                    current += increment;
-                    if (current >= target) {
-                        stat.textContent = target;
-                        clearInterval(timer);
-                    } else {
-                        stat.textContent = current;
-                    }
-                }, 30);
-            });
-        });
-    </script>
+    <jsp:include page="footer.jsp"></jsp:include>
 </body>
 </html>

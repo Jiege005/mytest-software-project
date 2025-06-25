@@ -30,17 +30,18 @@ public class LoginControl extends HttpServlet{
 		  *    2.1 true:success  --> 跳转到首页
 		  *        false:failure  --> 跳转到登录页面
 		  */
+		request.setCharacterEncoding("UTF-8");
 		String username = request.getParameter("username");
 		String password = request.getParameter("password");
-		System.out.println(username+","+password);
-		boolean result = iuserService.login(username, MD5.computeDigest(password.getBytes()));
-		if(result) {
+		int uid = iuserService.login(username, MD5.computeDigest(password.getBytes()));
+		System.out.println(uid+","+username+","+password);
+		if(uid > 0) {
+			// 把用户名存入session对象中
+			request.getSession().setAttribute("username", username);
+			request.getSession().setAttribute("uid", uid);
 			if(username.equals("admin")) {
-				request.getSession().setAttribute("username", username);
-				response.sendRedirect("admin-base.jsp");
+				request.getRequestDispatcher("WEB-INF/admin-base.jsp").forward(request, response);
 			}else {
-				// 把用户名存入session对象中
-				request.getSession().setAttribute("username", username);
 				response.sendRedirect("Main.jsp");
 			}
 		}else {

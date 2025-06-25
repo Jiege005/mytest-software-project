@@ -1,5 +1,7 @@
 package mytest.services;
 
+import java.util.List;
+
 import mytest.dao.IUserDao;
 import mytest.dao.IUserDaoImpl;
 import mytest.model.User;
@@ -17,12 +19,12 @@ public class IUserServiceImpl implements IUserService{
 		return false;
 	}
 
-	public boolean login(String username,String password) {
+	public int login(String username,String password) {
 		int uid = iuserDao.login(username, password);
-		if(uid>0) {
-			return true;
-		}
-		return false;
+		return uid;
 	}
 
+	public List<User> getUserList(){
+		return iuserDao.getUserList();
+	}
 }

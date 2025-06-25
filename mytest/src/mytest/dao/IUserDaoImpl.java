@@ -4,6 +4,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
 import mytest.model.User;
 import mytest.util.JDBCUtil;
@@ -48,6 +52,31 @@ public class IUserDaoImpl implements IUserDao{
 			e.printStackTrace();
 		}
 		return uid;
+	}
+	
+	public List<User> getUserList(){
+		Connection conn = JDBCUtil.getConn();
+		PreparedStatement pstmt = null;
+		ResultSet rs = null;
+		List<User> list = null;
+		String sql = "select uid,username,email from user where uid != 1";
+		try {
+			pstmt = conn.prepareStatement(sql);
+			rs = pstmt.executeQuery();
+			list = new ArrayList<User>();
+			while(rs.next()) {
+				int uid = rs.getInt("uid");
+				String username = rs.getString("username");
+				String email = rs.getString("email");
+				User user = new User(uid,username,email);
+				list.add(user);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}finally {
+			JDBCUtil.close(rs, pstmt, null);
+		}
+		return list;
 	}
 
 }

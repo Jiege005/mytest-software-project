@@ -1,17 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>职工管理系统 - 后台管理</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="bootstrap-3.3.5-dist/css/bootstrap.min.css">
-    <script type="text/javascript" src="bootstrap-3.3.5-dist/js/jquery-1.11.3.js"></script>
-    <script type="text/javascript" src="bootstrap-3.3.5-dist/js/bootstrap.min.js"></script>
-    <style type="text/css">
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style type="text/css">
         * {
             margin: 0;
             padding: 0;
@@ -453,95 +447,6 @@
     </style>
 </head>
 <body>
-    <!-- 侧边导航栏 -->
-    <div class="sidebar">
-        <div class="sidebar-header">
-            <h2>
-                <i class="fas fa-cogs"></i>
-                <span>后台管理</span>
-            </h2>
-        </div>
-        
-        <div class="nav-links">
-            <a href="admin-dashboard.jsp" class="nav-item">
-                <i class="fas fa-tachometer-alt"></i>
-                <span>控制面板</span>
-            </a>
-            <a href="admin-users.jsp" class="nav-item">
-                <i class="fas fa-users"></i>
-                <span>用户管理</span>
-            </a>
-            <a href="admin-attendance.jsp" class="nav-item">
-                <i class="fas fa-calendar-check"></i>
-                <span>考勤管理</span>
-            </a>
-            <a href="admin-salary.jsp" class="nav-item">
-                <i class="fas fa-money-bill-wave"></i>
-                <span>薪资管理</span>
-            </a>
-            <a href="admin-position.jsp" class="nav-item">
-                <i class="fas fa-user-tie"></i>
-                <span>职位管理</span>
-            </a>
-            <a href="admin-reports.jsp" class="nav-item">
-                <i class="fas fa-file-alt"></i>
-                <span>报表统计</span>
-            </a>
-            <a href="admin-settings.jsp" class="nav-item">
-                <i class="fas fa-cog"></i>
-                <span>系统设置</span>
-            </a>
-        </div>
-    </div>
-    
-    <!-- 主内容区域 -->
-    <div class="main-content">
-        <!-- 顶部导航 -->
-        <div class="top-nav">
-            <div class="search-bar">
-                <i class="fas fa-search"></i>
-                <input type="text" placeholder="搜索职工、部门或职位...">
-            </div>
-            
-            <div class="user-info">
-                <div class="notifications">
-                    <i class="fas fa-bell"></i>
-                </div>
-                <div class="user-avatar">${username.charAt(0)}</div>
-                <div class="user-name">${username}</div>
-            </div>
-        </div>
-        
-        <!-- 动态内容区域 -->
-        <jsp:include page="${contentPage}" />
-    </div>
 
-    <script>
-        // 统计卡片动画
-        const statCards = document.querySelectorAll('.stat-card');
-        statCards.forEach((card, index) => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(20px)';
-            
-            setTimeout(() => {
-                card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
-                card.style.opacity = '1';
-                card.style.transform = 'translateY(0)';
-            }, 200 * index);
-        });
-        
-        // 模拟数据加载效果
-        document.addEventListener('DOMContentLoaded', function() {
-            const loadingRows = document.querySelectorAll('tbody tr');
-            loadingRows.forEach((row, index) => {
-                row.style.opacity = '0';
-                
-                setTimeout(() => {
-                    row.style.transition = 'opacity 0.3s ease';
-                    row.style.opacity = '1';
-                }, 100 * index);
-            });
-        });
-    </script>
 </body>
 </html>
